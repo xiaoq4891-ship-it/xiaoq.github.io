@@ -1,245 +1,181 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ToaY-CloudsMC 社区</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToaY-CloudsMC 社区</title>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+    body{
+      background:linear-gradient(to bottom,#081120,#030712);
+      color:white;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
 
-body{
-background:#0d1117;
-font-family:sans-serif;
-color:white;
-overflow-x:hidden;
-}
+    .container{
+      width:100%;
+      max-width:550px;
+      text-align:center;
+    }
 
-.top{
-width:100%;
-padding:80px 20px;
-text-align:center;
-background:linear-gradient(135deg,#111827,#1e293b);
-border-bottom:1px solid #222;
-}
+    .title{
+      font-size:42px;
+      font-weight:bold;
+      color:#4ea1ff;
+      margin-bottom:12px;
+    }
 
-.top h1{
-font-size:45px;
-margin-bottom:15px;
-color:#58a6ff;
-}
+    .subtitle{
+      color:#cccccc;
+      margin-bottom:40px;
+      line-height:1.7;
+    }
 
-.top p{
-color:#aaa;
-font-size:18px;
-}
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      padding:30px;
+      backdrop-filter:blur(10px);
+      box-shadow:0 0 25px rgba(0,0,0,0.4);
+      margin-bottom:25px;
+    }
 
-.box{
-max-width:420px;
-margin:40px auto;
-background:#161b22;
-padding:30px;
-border-radius:20px;
-border:1px solid #30363d;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
+    .welcome{
+      font-size:24px;
+      margin-bottom:16px;
+    }
 
-.box h2{
-margin-bottom:20px;
-text-align:center;
-}
+    .desc{
+      color:#bbbbbb;
+      line-height:1.8;
+      margin-bottom:28px;
+    }
 
-input{
-width:100%;
-padding:15px;
-margin-top:10px;
-background:#0d1117;
-border:1px solid #30363d;
-border-radius:10px;
-color:white;
-font-size:16px;
-}
+    .section-title{
+      font-size:22px;
+      margin-bottom:18px;
+      color:#7ec3ff;
+    }
 
-button{
-width:100%;
-padding:15px;
-margin-top:15px;
-border:none;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
-}
+    .btn{
+      display:block;
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+      margin-bottom:16px;
+      transition:0.2s;
+      text-decoration:none;
+      color:white;
+    }
 
-.register{
-background:#238636;
-color:white;
-}
+    .discord{
+      background:#5865F2;
+    }
 
-.login{
-background:#1f6feb;
-color:white;
-}
+    .discord:hover{
+      background:#4752c4;
+    }
 
-.discord{
-background:#5865F2;
-color:white;
-}
+    .help{
+      background:#ff9800;
+    }
 
-.resource{
-background:#f59e0b;
-color:white;
-}
+    .help:hover{
+      background:#e68900;
+    }
 
-button:hover{
-opacity:0.8;
-transform:scale(1.02);
-}
+    .resource{
+      background:#00b894;
+    }
 
-.links{
-max-width:420px;
-margin:20px auto;
-}
+    .resource:hover{
+      background:#009d7d;
+    }
 
-.footer{
-text-align:center;
-padding:30px;
-color:#666;
-font-size:14px;
-}
-
-.status{
-margin-top:15px;
-text-align:center;
-color:#58a6ff;
-}
-</style>
+    .footer{
+      margin-top:30px;
+      color:#888;
+      font-size:14px;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="top">
-<h1>ToaY-CloudsMC 社区</h1>
+<div class="container">
 
-<p>
-KOOK、QQ 为中转站<br>
-推荐加入 Discord 社区
-</p>
+  <div class="title">ToaY-CloudsMC 社区</div>
+
+  <div class="subtitle">
+    KOOK、QQ 中转站<br>
+    欢迎加入我们的 Discord 社区
+  </div>
+
+  <!-- 主卡片 -->
+  <div class="card">
+
+    <div class="welcome">欢迎来到社区</div>
+
+    <div class="desc">
+      现在已经移除了登录系统。<br>
+      你可以直接加入我们的社区和服务器。<br><br>
+      感谢你的支持 ❤️
+    </div>
+
+    <a class="btn discord"
+      href="https://discord.gg/gwCjwyNmGG"
+       target="_blank">
+      加入我们的 Discord
+    </a>
+
+    <a class="btn help"
+       href="https://qm.qq.com/1050634263"
+       target="_blank">
+      获取帮助
+    </a>
+
+  </div>
+
+  <!-- 资源导航 -->
+  <div class="card">
+
+    <div class="section-title">
+      📦 资源导航
+    </div>
+
+    <div class="desc">
+      在这里下载社区资源、整合包、客户端、插件等内容。
+    </div>
+
+    <a class="btn resource"
+       href="https://1847836810.mshare.123pan.cn/123pan/s7J3vd-paHO3"
+       target="_blank">
+      打开资源下载站
+    </a>
+
+  </div>
+
+  <div class="footer">
+    © 2026 ToaY-CloudsMC Community
+  </div>
+
 </div>
-
-<div class="box">
-
-<h2>注册 / 登录</h2>
-
-<input type="email" id="email" placeholder="输入邮箱">
-
-<input type="password" id="password" placeholder="输入密码">
-
-<button class="register" onclick="register()">
-注册账号
-</button>
-
-<button class="login" onclick="login()">
-登录账号
-</button>
-
-<div class="status" id="status"></div>
-
-</div>
-
-<div class="links">
-
-<button class="discord"
-onclick="window.open('https://discord.gg/gwCjwyNmGG')">
-加入我们的 Discord
-</button>
-
-<button class="resource"
-onclick="window.open('https://1847836810.mshare.123pan.cn/123pan/s7J3vd-paHO3')">
-资源导航
-</button>
-
-</div>
-
-<div class="footer">
-© 2026 ToaY-CloudsMC Community
-</div>
-
-<script>
-
-const supabaseUrl =
-'https://dupzyidgifkbmgyicntl.supabase.co'
-
-const supabaseKey =
-'sb_publishable_oM5fgDZM207YZwKf5rZ17g_0CA46rbW'
-
-const supabase =
-window.supabase.createClient(
-supabaseUrl,
-supabaseKey
-)
-
-async function register(){
-
-const email =
-document.getElementById("email").value
-
-const password =
-document.getElementById("password").value
-
-const status =
-document.getElementById("status")
-
-const { data, error } =
-await supabase.auth.signUp({
-email: email,
-password: password
-})
-
-if(error){
-status.innerText =
-"注册失败：" + error.message
-}else{
-status.innerText =
-"注册成功！请检查邮箱验证"
-}
-
-}
-
-async function login(){
-
-const email =
-document.getElementById("email").value
-
-const password =
-document.getElementById("password").value
-
-const status =
-document.getElementById("status")
-
-const { data, error } =
-await supabase.auth.signInWithPassword({
-email: email,
-password: password
-})
-
-if(error){
-status.innerText =
-"登录失败：" + error.message
-}else{
-status.innerText =
-"登录成功！"
-}
-
-}
-
-</script>
 
 </body>
 </html>
