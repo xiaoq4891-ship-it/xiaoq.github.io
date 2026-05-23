@@ -3,45 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小清的测试官网</title>
+
+<title>小清社区官网</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-background:black;
+background:#0d1117;
 color:white;
-text-align:center;
 font-family:sans-serif;
-padding-top:100px;
+overflow-x:hidden;
 }
 
-h1{
-color:#58a6ff;
-font-size:40px;
+header{
+padding:120px 20px;
+text-align:center;
+background:linear-gradient(135deg,#5865F2,#238636);
 }
 
-button{
-background:#238636;
-border:none;
-padding:15px 30px;
-color:white;
+header h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+header p{
 font-size:20px;
-border-radius:10px;
-cursor:pointer;
+opacity:0.9;
 }
 
-button:hover{
-background:#2ea043;
+.dc-btn{
+display:inline-block;
+margin-top:40px;
+padding:18px 40px;
+background:#5865F2;
+color:white;
+text-decoration:none;
+font-size:22px;
+border-radius:15px;
+transition:0.3s;
 }
+
+.dc-btn:hover{
+transform:scale(1.05);
+background:#4752c4;
+}
+
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+.card{
+max-width:900px;
+margin:auto;
+background:#161b22;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(0,0,0,0.5);
+}
+
+.card h2{
+font-size:40px;
+margin-bottom:20px;
+color:#58a6ff;
+}
+
+.card p{
+font-size:20px;
+line-height:1.8;
+color:#c9d1d9;
+}
+
+footer{
+padding:30px;
+text-align:center;
+color:#8b949e;
+font-size:15px;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>欢迎来到小清的测试官网</h1>
+<header>
 
-<p>这是我用安卓手机制作的网站！</p>
+<h1>小清社区</h1>
 
-<button onclick="alert('功能开发中...')">进入官网</button>
+<p>
+欢迎来到小清社区官方网站
+</p>
+
+<a class="dc-btn" href="https://discord.gg/gwCjwyNmGG">
+加入我们的 Discord
+</a>
+
+</header>
+
+<section class="section">
+
+<div class="card">
+
+<h2>为什么推荐 Discord？</h2>
+
+<p>
+KOOK、QQ 为中转站。<br><br>
+
+推荐直接加入 Discord。<br><br>
+
+Discord 比普通群聊、频道更自由、更强大，
+拥有更好的语音、频道管理、机器人系统以及社区体验。
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>社区功能</h2>
+
+<p>
+✔ 活跃聊天<br><br>
+
+✔ 机器人功能<br><br>
+
+✔ 游戏交流<br><br>
+
+✔ 自由频道系统<br><br>
+
+✔ 长期维护与更新
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 小清社区
+
+</footer>
 
 </body>
 </html>
