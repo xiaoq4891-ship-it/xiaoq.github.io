@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ToaY-CloudsMC社区官网</title>
+<title>ToaY-CloudsMC社区</title>
 
 <style>
 
@@ -28,18 +31,18 @@ background:linear-gradient(135deg,#5865F2,#238636);
 }
 
 header h1{
-font-size:55px;
+font-size:60px;
 margin-bottom:20px;
 }
 
 header p{
-font-size:20px;
+font-size:22px;
 opacity:0.9;
 }
 
 .dc-btn{
 display:inline-block;
-margin-top:40px;
+margin-top:30px;
 padding:18px 40px;
 background:#5865F2;
 color:white;
@@ -47,6 +50,8 @@ text-decoration:none;
 font-size:22px;
 border-radius:15px;
 transition:0.3s;
+border:none;
+cursor:pointer;
 }
 
 .dc-btn:hover{
@@ -63,13 +68,13 @@ text-align:center;
 max-width:900px;
 margin:auto;
 background:#161b22;
-padding:40px;
-border-radius:20px;
+padding:50px;
+border-radius:25px;
 box-shadow:0 0 30px rgba(0,0,0,0.5);
 }
 
 .card h2{
-font-size:40px;
+font-size:42px;
 margin-bottom:20px;
 color:#58a6ff;
 }
@@ -80,6 +85,16 @@ line-height:1.8;
 color:#c9d1d9;
 }
 
+input{
+padding:18px;
+width:80%;
+max-width:500px;
+border:none;
+border-radius:12px;
+font-size:18px;
+outline:none;
+}
+
 footer{
 padding:30px;
 text-align:center;
@@ -87,21 +102,40 @@ color:#8b949e;
 font-size:15px;
 }
 
+.glow{
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #58a6ff;
+}
+to{
+text-shadow:0 0 25px #58a6ff;
+}
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<h1>ToaY-CloudsMC社区</h1>
+<h1 class="glow">
+ToaY-CloudsMC社区
+</h1>
 
 <p>
-欢迎来到ToaY-CloudsMC社区官方网站
+欢迎来到 ToaY-CloudsMC 官方网站
 </p>
 
-<a class="dc-btn" href="https://discord.gg/gwCjwyNmGG">
+<a class="dc-btn"
+href="https://discord.gg/gwCjwyNmGG">
+
 加入我们的 Discord
+
 </a>
 
 </header>
@@ -110,15 +144,67 @@ font-size:15px;
 
 <div class="card">
 
+<h2>邮箱注册系统</h2>
+
+<p>
+输入邮箱加入社区通知
+</p>
+
+<br>
+
+<input type="email"
+placeholder="请输入你的邮箱">
+
+<br><br>
+
+<button class="dc-btn">
+
+立即注册
+
+</button>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>资源导航</h2>
+
+<p>
+点击下面按钮进入资源中心
+</p>
+
+<br>
+
+<a class="dc-btn"
+href="https://1847836810.mshare.123pan.cn/123pan/s7J3vd-paHO3">
+
+进入资源导航
+
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
 <h2>为什么推荐 Discord？</h2>
 
 <p>
+
 KOOK、QQ 为中转站。<br><br>
 
 推荐直接加入 Discord。<br><br>
 
 Discord 比普通群聊、频道更自由、更强大，
-拥有更好的语音、频道管理、机器人系统以及社区体验。
+拥有更好的语音、机器人系统以及社区体验。
+
 </p>
 
 </div>
@@ -132,15 +218,17 @@ Discord 比普通群聊、频道更自由、更强大，
 <h2>社区功能</h2>
 
 <p>
-✔ 活跃聊天<br><br>
 
-✔ 机器人功能<br><br>
+✔ 活跃聊天<br><br>
 
 ✔ 游戏交流<br><br>
 
-✔ 自由频道系统<br><br>
+✔ 多频道系统<br><br>
 
-✔ 长期维护与更新
+✔ 社区机器人<br><br>
+
+✔ 长期更新维护
+
 </p>
 
 </div>
@@ -154,4 +242,5 @@ Discord 比普通群聊、频道更自由、更强大，
 </footer>
 
 </body>
+
 </html>
