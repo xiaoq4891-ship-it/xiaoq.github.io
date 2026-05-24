@@ -54,35 +54,54 @@
       text-align:center;
     }
 
-    .theme-toggle-container {
+    .controls-container {
       position: fixed;
       top: 20px;
-      right: 20px;
+      left: 20px;
       z-index: 1000;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
 
-    .theme-toggle-btn {
+    .control-btn {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       color: var(--text-primary);
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 24px;
+      font-size: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: 0.3s ease;
+      font-weight: bold;
     }
 
-    .theme-toggle-btn:hover {
-      background: rgba(255,255,255,0.1);
+    .control-btn:hover {
+      background: rgba(255,255,255,0.15);
       transform: scale(1.1);
     }
 
-    html.light-theme .theme-toggle-btn:hover {
-      background: rgba(0,0,0,0.1);
+    html.light-theme .control-btn:hover {
+      background: rgba(0,0,0,0.15);
+    }
+
+    .lang-btn {
+      font-size: 14px;
+      padding: 0;
+    }
+
+    .lang-btn.active {
+      background: var(--title-color);
+      border-color: var(--title-color);
+    }
+
+    #themeToggle {
+      font-size: 22px;
     }
 
     .title{
@@ -234,28 +253,29 @@
 
 <body>
 
-<div class="theme-toggle-container">
-  <button class="theme-toggle-btn" id="themeToggle" title="切换主题">🌙</button>
+<!-- 控制按钮容器：语言切换 + 主题切换（左上角） -->
+<div class="controls-container">
+  <button class="control-btn lang-btn active" data-lang="zh" title="中文">中</button>
+  <button class="control-btn lang-btn" data-lang="en" title="English">En</button>
+  <button class="control-btn lang-btn" data-lang="es" title="Español">Es</button>
+  <button class="control-btn" id="themeToggle" title="切换主题">☀️</button>
 </div>
 
 <div class="container">
 
-  <div class="title">ToaY-CloudsMC 社区</div>
+  <div class="title" data-i18n="title">ToaY-CloudsMC 社区</div>
 
-  <div class="subtitle">
-    KOOK、QQ 中转站<br>
-    欢迎加入我们的 Discord 社区
+  <div class="subtitle" data-i18n="subtitle">
+    KOOK、QQ 中转站<br>欢迎加入我们的 Discord 社区
   </div>
 
   <!-- 主卡片 -->
   <div class="card">
 
-    <div class="welcome">欢迎来到社区</div>
+    <div class="welcome" data-i18n="welcome">欢迎来到社区</div>
 
-    <div class="desc">
-      现在已经移除了登录系统。<br>
-      你可以直接加入我们的社区和服务器。<br><br>
-      感谢你的支持 ❤️
+    <div class="desc" data-i18n="desc1">
+      现在已经移除了登录系统。<br>你可以直接加入我们的社区和服务器。<br><br>感谢你的支持 ❤️
     </div>
 
     <a class="btn discord"
@@ -264,7 +284,7 @@
 
       <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">
 
-      加入我们的 Discord
+      <span data-i18n="joinDiscord">加入我们的 Discord</span>
     </a>
 
     <a class="btn help"
@@ -273,7 +293,7 @@
 
       <img src="https://cdn-icons-png.flaticon.com/512/5968/5968770.png">
 
-      加入 QQ 群聊
+      <span data-i18n="joinQQ">加入 QQ 群聊</span>
     </a>
 
   </div>
@@ -281,11 +301,11 @@
   <!-- 资源导航 -->
   <div class="card">
 
-    <div class="section-title">
+    <div class="section-title" data-i18n="resourceNav">
       📦 资源导航
     </div>
 
-    <div class="desc">
+    <div class="desc" data-i18n="resourceDesc">
       在这里下载社区资源、整合包、客户端、插件等内容。
     </div>
 
@@ -295,7 +315,7 @@
 
       <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png">
 
-      打开资源下载站
+      <span data-i18n="openResource">打开资源下载站</span>
     </a>
 
   </div>
@@ -303,13 +323,12 @@
   <!-- 关注我们 -->
   <div class="card">
 
-    <div class="section-title">
+    <div class="section-title" data-i18n="followUs">
       📺 关注我们
     </div>
 
-    <div class="desc">
-      在我们的社交媒体频道上关注我们，
-      获取最新的更新和内容。
+    <div class="desc" data-i18n="followDesc">
+      在我们的社交媒体频道上关注我们，<br>获取最新的更新和内容。
     </div>
 
     <a class="btn youtube"
@@ -318,7 +337,7 @@
 
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
 
-      关注 YouTube 频道
+      <span data-i18n="followYoutube">关注 YouTube 频道</span>
     </a>
 
   </div>
@@ -326,13 +345,12 @@
   <!-- 联系我们 -->
   <div class="card">
 
-    <div class="section-title">
+    <div class="section-title" data-i18n="contactUs">
       📞 联系我们
     </div>
 
-    <div class="desc">
-      如果你有问题、建议或者合作需求，
-      可以通过下面方式联系我。
+    <div class="desc" data-i18n="contactDesc">
+      如果你有问题、建议或者合作需求，<br>可以通过下面方式联系我。
     </div>
 
     <!-- QQ -->
@@ -342,7 +360,7 @@
 
       <img src="https://cdn-icons-png.flaticon.com/512/5968/5968770.png">
 
-      QQ：3668667723
+      <span data-i18n="qqContact">QQ：3668667723</span>
     </a>
 
     <!-- X -->
@@ -352,7 +370,7 @@
 
       <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png">
 
-      X / Twitter
+      <span data-i18n="twitter">X / Twitter</span>
     </a>
 
     <!-- Facebook -->
@@ -362,7 +380,7 @@
 
       <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
 
-      Facebook
+      <span data-i18n="facebook">Facebook</span>
     </a>
 
   </div>
@@ -370,16 +388,13 @@
   <!-- 封禁申诉 -->
   <div class="card">
 
-    <div class="section-title">
+    <div class="section-title" data-i18n="banAppeal">
       ⚖️ 封禁申诉
     </div>
 
-    <div class="desc">
-      如果你被社区封禁，<br>
-      请通过邮箱发送申诉信息。<br><br>
-
+    <div class="desc" data-i18n="banDesc">
+      如果你被社区封禁，<br>请通过邮箱发送申诉信息。<br><br>
       我们会在 20~30 个工作日内处理你的申诉。<br><br>
-
       请在邮件中说明：<br>
       • 你的账号信息<br>
       • 被封禁原因（如果知道）<br>
@@ -391,48 +406,18 @@
 
       <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
 
-      rolsonpronk@gmail.com
+      <span data-i18n="email">rolsonpronk@gmail.com</span>
     </a>
 
   </div>
 
-  <div class="footer">
+  <div class="footer" data-i18n="copyright">
     © 2026 ToaY-CloudsMC Community
   </div>
 
 </div>
 
-<script>
-  // 获取主题切换按钮和 html 元素
-  const themeToggle = document.getElementById('themeToggle');
-  const htmlElement = document.documentElement;
-
-  // 从 localStorage 读取保存的主题
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  
-  // 初始化主题
-  if (savedTheme === 'light') {
-    htmlElement.classList.add('light-theme');
-    themeToggle.textContent = '🌞';
-  } else {
-    htmlElement.classList.remove('light-theme');
-    themeToggle.textContent = '🌙';
-  }
-
-  // 主题切换事件
-  themeToggle.addEventListener('click', () => {
-    htmlElement.classList.toggle('light-theme');
-    
-    // 获取当前主题
-    const currentTheme = htmlElement.classList.contains('light-theme') ? 'light' : 'dark';
-    
-    // 保存主题到 localStorage
-    localStorage.setItem('theme', currentTheme);
-    
-    // 更新按钮图标
-    themeToggle.textContent = currentTheme === 'light' ? '🌞' : '🌙';
-  });
-</script>
+<script src="translations.js"></script>
 
 </body>
 </html>
