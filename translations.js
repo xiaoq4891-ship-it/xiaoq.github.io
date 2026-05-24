@@ -141,11 +141,99 @@ class LocalizationManager {
   }
 }
 
+// 页面加载动画管理类
+class PageLoadAnimation {
+  constructor() {
+    this.loadingScreen = document.getElementById('loadingScreen');
+    this.progressBar = document.getElementById('progressBar');
+    this.mainContent = document.querySelector('.container');
+    this.cards = document.querySelectorAll('.card');
+    this.controls = document.querySelector('.controls-container');
+    this.progress = 0;
+    this.init();
+  }
+
+  init() {
+    // 等待页面完全加载后开始动画
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => this.startAnimation());
+      window.addEventListener('load', () => this.completeAnimation());
+    } else {
+      this.startAnimation();
+      this.completeAnimation();
+    }
+  }
+
+  startAnimation() {
+    // 模拟加载进度
+    const interval = setInterval(() => {
+      if (this.progress < 90) {
+        this.progress += Math.random() * 30;
+        this.updateProgress();
+      }
+    }, 300);
+
+    // 保存interval ID以便后续清除
+    this.progressInterval = interval;
+  }
+
+  updateProgress() {
+    if (this.progressBar) {
+      this.progressBar.style.width = this.progress + '%';
+    }
+  }
+
+  completeAnimation() {
+    // 完成进度条
+    this.progress = 100;
+    this.updateProgress();
+
+    // 清除interval
+    if (this.progressInterval) {
+      clearInterval(this.progressInterval);
+    }
+
+    // 延迟后隐藏加载屏
+    setTimeout(() => {
+      this.hideLoadingScreen();
+      this.animateContent();
+    }, 600);
+  }
+
+  hideLoadingScreen() {
+    if (this.loadingScreen) {
+      this.loadingScreen.classList.add('fade-out');
+      setTimeout(() => {
+        this.loadingScreen.style.display = 'none';
+      }, 500);
+    }
+  }
+
+  animateContent() {
+    // 显示主容器和控制按钮
+    if (this.mainContent) {
+      this.mainContent.classList.add('fade-in-up');
+    }
+    if (this.controls) {
+      this.controls.classList.add('fade-in-down');
+    }
+
+    // 依次显示每个卡片
+    this.cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add('slide-in-up');
+      }, index * 150);
+    });
+  }
+}
+
 // 初始化
 let localizationManager;
+let pageLoadAnimation;
 
 document.addEventListener('DOMContentLoaded', () => {
   localizationManager = new LocalizationManager();
+  pageLoadAnimation = new PageLoadAnimation();
 
   // 语言切换事件
   document.querySelectorAll('.lang-btn').forEach(btn => {
