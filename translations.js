@@ -4,11 +4,7 @@ const translations = {
     title: "ToaY-CloudsMC 社区",
     subtitle: "KOOK、QQ 中转站<br>欢迎加入我们的 Discord 社区",
     welcome: "欢迎来到社区",
-    desc1: "公告:<br>DC频道更新<br>1.由于根据Discord社区守则第12条
-不得上传或分享任何描绘暴力、血腥或虐待动物的材料，尤其不得以骚扰或惊吓他人为目的
-所以我们决定删除了血腥网站分享
-2.我们新建了游戏专区类别删除了之前的所有游戏的单个专区
-3.娱乐放松新建梗图<br>感谢你的支持 ❤️",
+    desc1: "公告:<br>DC频道更新<br>在qq<br>感谢你的支持 ❤️",
     joinDiscord: "加入我们的 Discord",
     joinQQ: "加入 QQ 群聊",
     resourceNav: "📦 资源导航",
@@ -31,11 +27,7 @@ const translations = {
     title: "ToaY-CloudsMC Community",
     subtitle: "KOOK, QQ Hub<br>Welcome to join our Discord community",
     welcome: "Welcome to the Community",
-    desc1: "Announcement:<br>1. According to Article 12 of the Discord Community Guidelines, uploading or sharing any content depicting violence, gore, or animal abuse is prohibited, especially if it is intended to harass, shock, or frighten others. Therefore, we have decided to remove the sharing of gore-related websites.
-
-2. We have created a new Gaming category and removed all previous individual game channels.
-
-3. A new meme channel has been added under the Entertainment & Relaxation section.<br><br>Thank you for your support ❤️",
+    desc1: "Announcement:<br><br>qq<br>Thank you for your support ❤️",
     joinDiscord: "Join Our Discord",
     joinQQ: "Join QQ Group",
     resourceNav: "📦 Resources",
@@ -58,11 +50,7 @@ const translations = {
     title: "Comunidad ToaY-CloudsMC",
     subtitle: "Centro KOOK, QQ<br>Bienvenido a unirse a nuestra comunidad de Discord",
     welcome: "Bienvenido a la Comunidad",
-    desc1: "Anuncio<br>1. De acuerdo con el Artículo 12 de las Normas de la Comunidad de Discord, no está permitido subir ni compartir contenido que muestre violencia, gore o abuso animal, especialmente si tiene como objetivo acosar, asustar o incomodar a otras personas. Por lo tanto, hemos decidido eliminar el contenido y los sitios relacionados con gore.
-
-2. Hemos creado una nueva categoría de juegos y eliminado todas las antiguas secciones individuales de cada juego.
-
-3. Se ha añadido un nuevo canal de memes en la sección de entretenimiento y relajación.<br><br>¡Gracias por su apoyo ❤️",
+    desc1: "Anuncio<br>1.<br>qq<br>¡Gracias por su apoyo ❤️",
     joinDiscord: "Únete a Nuestro Discord",
     joinQQ: "Únete al Grupo QQ",
     resourceNav: "📦 Recursos",
