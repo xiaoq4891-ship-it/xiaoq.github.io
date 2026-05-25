@@ -4,12 +4,7 @@ const translations = {
     title: "ToaY-CloudsMC 社区",
     subtitle: "KOOK、QQ 中转站<br>欢迎加入我们的 Discord 社区",
     welcome: "欢迎来到社区",
-    desc1: "公告:<br>DC频道更新
-1.由于根据Discord社区守则第12条
-不得上传或分享任何描绘暴力、血腥或虐待动物的材料，尤其不得以骚扰或惊吓他人为目的
-所以我们决定删除了血腥网站分享
-2.我们新建了游戏专区类别删除了之前的所有游戏的单个专区
-3.娱乐放松新建梗图<br><br>感谢你的支持 ❤️",
+    desc1: "公告:<br>DC频道更新<br>频道更新<br>感谢你的支持 ❤️",
     joinDiscord: "加入我们的 Discord",
     joinQQ: "加入 QQ 群聊",
     resourceNav: "📦 资源导航",
@@ -32,7 +27,7 @@ const translations = {
     title: "ToaY-CloudsMC Community",
     subtitle: "KOOK, QQ Hub<br>Welcome to join our Discord community",
     welcome: "Welcome to the Community",
-    desc1: "Announcement:<br>1. Since according to Discord Community Guidelines Article 12, it is not allowed to upload or share any content depicting violence, bloodshed, or animal abuse, especially not for the purpose of harassing or scaring others, we've decided to remove the links to those websites. 2. We've created a new gaming category and deleted all the individual game sections from before. 3. We've added a new meme section for entertainment and relaxation<br><br>Thank you for your support ❤️",
+    desc1: "Announcement:<br><br><br>Thank you for your support ❤️",
     joinDiscord: "Join Our Discord",
     joinQQ: "Join QQ Group",
     resourceNav: "📦 Resources",
