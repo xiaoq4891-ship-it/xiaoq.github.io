@@ -21,7 +21,7 @@ const translations = {
     banAppeal: "⚖️ 封禁申诉",
     banDesc: "如果你被社区封禁，<br>请通过邮箱发送申诉信息。<br><br>我们会在 20~30 个工作日内处理你的申诉。<br><br>请在邮件中说明：<br>• 你的账号信息<br>• 被封禁原因（如果知道）<br>• 你的申诉理由",
 popupTitle: "📢 社区公告",
-popupDesc: "欢迎来到 ToaY-CloudsMC 社区<br><br>• 社区已更新新的 DC 频道<br>• 新增资源导航页面<br>• 请遵守社区规则<br><br>感谢你的支持 ❤️",
+popupDesc: "欢迎来到 ToaY-CloudsMC 社区<br><br>• 已更新DC频道的规则如有需要请前往DC<br>• 新增资源导航页面<br>• 请遵守社区规则<br><br>感谢你的支持 ❤️",
 popupButton: "我知道了",
     email: "rolsonpronk@gmail.com",
     copyright: "© 2026 ToaY-CloudsMC Community"
