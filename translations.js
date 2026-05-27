@@ -20,6 +20,9 @@ const translations = {
     facebook: "Facebook",
     banAppeal: "⚖️ 封禁申诉",
     banDesc: "如果你被社区封禁，<br>请通过邮箱发送申诉信息。<br><br>我们会在 20~30 个工作日内处理你的申诉。<br><br>请在邮件中说明：<br>• 你的账号信息<br>• 被封禁原因（如果知道）<br>• 你的申诉理由",
+popupTitle: "📢 社区公告",
+popupDesc: "欢迎来到 ToaY-CloudsMC 社区<br><br>• 社区已更新新的 DC 频道<br>• 新增资源导航页面<br>• 请遵守社区规则<br><br>感谢你的支持 ❤️",
+popupButton: "我知道了",
     email: "rolsonpronk@gmail.com",
     copyright: "© 2026 ToaY-CloudsMC Community"
   },
@@ -51,6 +54,9 @@ const translations = {
     subtitle: "Centro KOOK, QQ<br>Bienvenido a unirse a nuestra comunidad de Discord",
     welcome: "Bienvenido a la Comunidad",
     desc1: "Anuncio<br>1.<br>qq<br>¡Gracias por su apoyo ❤️",
+popupTitle: "📢 Community Announcement",
+popupDesc: "Welcome to ToaY-CloudsMC Community<br><br>• DC channels have been updated<br>• Added new resource navigation page<br>• Please follow the community rules<br><br>Thank you for your support ❤️",
+popupButton: "Got it",
     joinDiscord: "Únete a Nuestro Discord",
     joinQQ: "Únete al Grupo QQ",
     resourceNav: "📦 Recursos",
@@ -66,6 +72,9 @@ const translations = {
     facebook: "Facebook",
     banAppeal: "⚖️ Apelación de Prohibición",
     banDesc: "Si ha sido prohibido de la comunidad,<br>envíe una apelación por correo electrónico.<br><br>Procesaremos su apelación en 20-30 días hábiles.<br><br>Por favor especifique en el correo electrónico:<br>• La información de su cuenta<br>• Motivo de la prohibición (si se conoce)<br>• Su motivo de apelación",
+popupTitle: "📢 Anuncio de la Comunidad",
+popupDesc: "Bienvenido a la comunidad ToaY-CloudsMC<br><br>• Los canales de DC han sido actualizados<br>• Nueva página de recursos añadida<br>• Por favor siga las reglas de la comunidad<br><br>Gracias por su apoyo ❤️",
+popupButton: "Entendido",
     email: "rolsonpronk@gmail.com",
     copyright: "© 2026 Comunidad ToaY-CloudsMC"
   }
