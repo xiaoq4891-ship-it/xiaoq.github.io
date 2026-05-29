@@ -20,11 +20,10 @@ const translations = {
     facebook: "Facebook",
     banAppeal: "⚖️ 封禁申诉",
     banDesc: "如果你被社区封禁，<br>请通过邮箱发送申诉信息。<br><br>我们会在 20~30 个工作日内处理你的申诉。<br><br>请在邮件中说明：<br>• 你的账号信息<br>• 被封禁原因（如果知道）<br>• 你的申诉理由",
-popupTitle: "📢 社区公告",
-popupDesc: "欢迎来到 ToaY-CloudsMC 社区<br><br>• 已更新DC频道的规则如有需要请前往DC<br>• 新增资源导航页面<br>• 请遵守社区规则<br><br>感谢你的支持 ❤️",
-popupButton: "我知道了",
     email: "rolsonpronk@gmail.com",
-    copyright: "© 2026 ToaY-CloudsMC Community"
+    copyright: "© 2026 ToaY-CloudsMC Community",
+    announcementTitle: "📢 公告",
+    announcementClose: "我知道了"
   },
   en: {
     title: "ToaY-CloudsMC Community",
@@ -47,16 +46,15 @@ popupButton: "我知道了",
     banAppeal: "⚖️ Ban Appeal",
     banDesc: "If you have been banned from the community,<br>please send an appeal via email.<br><br>We will process your appeal within 20-30 business days.<br><br>Please specify in the email:<br>• Your account information<br>• Reason for ban (if known)<br>• Your appeal reason",
     email: "rolsonpronk@gmail.com",
-    copyright: "© 2026 ToaY-CloudsMC Community"
+    copyright: "© 2026 ToaY-CloudsMC Community",
+    announcementTitle: "📢 Announcement",
+    announcementClose: "Got it"
   },
   es: {
     title: "Comunidad ToaY-CloudsMC",
     subtitle: "Centro KOOK, QQ<br>Bienvenido a unirse a nuestra comunidad de Discord",
     welcome: "Bienvenido a la Comunidad",
     desc1: "Anuncio<br>1.<br>qq<br>¡Gracias por su apoyo ❤️",
-popupTitle: "📢 Community Announcement",
-popupDesc: "Welcome to ToaY-CloudsMC Community<br><br>• DC channels have been updated<br>• Added new resource navigation page<br>• Please follow the community rules<br><br>Thank you for your support ❤️",
-popupButton: "Got it",
     joinDiscord: "Únete a Nuestro Discord",
     joinQQ: "Únete al Grupo QQ",
     resourceNav: "📦 Recursos",
@@ -72,11 +70,10 @@ popupButton: "Got it",
     facebook: "Facebook",
     banAppeal: "⚖️ Apelación de Prohibición",
     banDesc: "Si ha sido prohibido de la comunidad,<br>envíe una apelación por correo electrónico.<br><br>Procesaremos su apelación en 20-30 días hábiles.<br><br>Por favor especifique en el correo electrónico:<br>• La información de su cuenta<br>• Motivo de la prohibición (si se conoce)<br>• Su motivo de apelación",
-popupTitle: "📢 Anuncio de la Comunidad",
-popupDesc: "Bienvenido a la comunidad ToaY-CloudsMC<br><br>• Los canales de DC han sido actualizados<br>• Nueva página de recursos añadida<br>• Por favor siga las reglas de la comunidad<br><br>Gracias por su apoyo ❤️",
-popupButton: "Entendido",
     email: "rolsonpronk@gmail.com",
-    copyright: "© 2026 Comunidad ToaY-CloudsMC"
+    copyright: "© 2026 Comunidad ToaY-CloudsMC",
+    announcementTitle: "📢 Anuncio",
+    announcementClose: "Entendido"
   }
 };
 
@@ -91,6 +88,25 @@ class LocalizationManager {
   init() {
     this.setLanguage(this.currentLanguage);
     this.setTheme(this.currentTheme);
+    this.showAnnouncement();
+  }
+
+  showAnnouncement() {
+    const modal = document.getElementById('announcementModal');
+    if (modal) {
+      modal.style.display = 'flex';
+    }
+  }
+
+  closeAnnouncement() {
+    const modal = document.getElementById('announcementModal');
+    if (modal) {
+      modal.classList.add('modal-fade-out');
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.classList.remove('modal-fade-out');
+      }, 300);
+    }
   }
 
   setLanguage(lang) {
@@ -209,7 +225,7 @@ function initPageLoadAnimation() {
 // 初始化所有功能
 document.addEventListener('DOMContentLoaded', () => {
   // 初始化语言和主题
-  const localizationManager = new LocalizationManager();
+  window.localizationManager = new LocalizationManager();
 
   // 初始化加载动画
   initPageLoadAnimation();
@@ -217,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 语言切换事件
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      localizationManager.setLanguage(e.target.getAttribute('data-lang'));
+      window.localizationManager.setLanguage(e.target.getAttribute('data-lang'));
     });
   });
 
@@ -225,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      localizationManager.toggleTheme();
+      window.localizationManager.toggleTheme();
     });
   }
 });
