@@ -88,7 +88,6 @@ class LocalizationManager {
   init() {
     this.setLanguage(this.currentLanguage);
     this.setTheme(this.currentTheme);
-    this.showAnnouncement();
   }
 
   showAnnouncement() {
@@ -226,6 +225,9 @@ function initPageLoadAnimation() {
 document.addEventListener('DOMContentLoaded', () => {
   // 初始化语言和主题
   window.localizationManager = new LocalizationManager();
+
+  // 显示公告弹窗
+  window.localizationManager.showAnnouncement();
 
   // 初始化加载动画
   initPageLoadAnimation();
