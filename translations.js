@@ -94,18 +94,17 @@ class LocalizationManager {
   showAnnouncement() {
     const modal = document.getElementById('announcementModal');
     if (modal) {
-      modal.style.display = 'flex';
+      // 稍微延迟一帧，确保 transition 生效
+      requestAnimationFrame(() => {
+        modal.classList.add('active');
+      });
     }
   }
 
   closeAnnouncement() {
     const modal = document.getElementById('announcementModal');
     if (modal) {
-      modal.classList.add('modal-fade-out');
-      setTimeout(() => {
-        modal.style.display = 'none';
-        modal.classList.remove('modal-fade-out');
-      }, 300);
+      modal.classList.remove('active');
     }
   }
 
