@@ -246,87 +246,107 @@
       margin-top:30px;
       color:var(--text-muted);
       font-size:14px;
-/* 公告弹窗 */
-.popup-overlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.7);
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-animation:fadeIn 0.3s ease;
-}
-
-.popup-box{
-width:90%;
-max-width:420px;
-background:var(--bg-card);
-border:1px solid var(--border-color);
-backdrop-filter:blur(14px);
-border-radius:20px;
-padding:28px;
-text-align:center;
-box-shadow:0 0 30px rgba(0,0,0,0.4);
-animation:popupShow 0.35s ease;
-}
-
-.popup-title{
-font-size:28px;
-font-weight:bold;
-color:var(--title-color);
-margin-bottom:18px;
-}
-
-.popup-desc{
-color:var(--text-secondary);
-line-height:1.8;
-margin-bottom:25px;
-font-size:15px;
-}
-
-.popup-btn{
-width:100%;
-padding:14px;
-border:none;
-border-radius:12px;
-background:#5865F2;
-color:white;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-transition:0.25s;
-}
-
-.popup-btn:hover{
-background:#4752c4;
-}
-
-@keyframes popupShow{
-from{
-opacity:0;
-transform:scale(0.8);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-}
-to{
-opacity:1;
-}
-}
       transition: color 0.3s ease;
+    }
+
+    /* 弹窗遮罩 */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    html.light-theme .modal-overlay {
+      background: rgba(0,0,0,0.4);
+    }
+
+    /* 弹窗主体 */
+    .modal-box {
+      background: #0d1f35;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 32px 28px 24px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+      position: relative;
+      animation: modalSlideUp 0.3s ease;
+    }
+
+    html.light-theme .modal-box {
+      background: #ffffff;
+      border-color: rgba(0,0,0,0.1);
+      box-shadow: 0 0 40px rgba(0,0,0,0.15);
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--title-color);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .modal-content {
+      color: var(--text-tertiary);
+      line-height: 1.9;
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .modal-close-btn {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      background: var(--title-color);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .modal-close-btn:hover {
+      opacity: 0.85;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes modalSlideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    .modal-fade-out {
+      animation: modalFadeIn 0.3s ease reverse forwards;
     }
   </style>
 </head>
 
 <body>
+
+<!-- 公告弹窗 -->
+<div class="modal-overlay" id="announcementModal">
+  <div class="modal-box">
+    <div class="modal-title" data-i18n="announcementTitle">📢 公告</div>
+    <div class="modal-content" data-i18n="desc1">
+      公告:<br>DC频道更新<br>qq<br>感谢你的支持 ❤️
+    </div>
+    <button class="modal-close-btn" id="modalCloseBtn" data-i18n="announcementClose">我知道了</button>
+  </div>
+</div>
 
 <!-- 控制按钮容器：语言切换 + 主题切换（左上角） -->
 <div class="controls-container">
@@ -485,23 +505,6 @@ opacity:1;
     </a>
 
   </div>
-<!-- 公告弹窗 --><div class="popup-overlay" id="announcementPopup">  <div class="popup-box"><div class="popup-title" data-i18n="popupTitle">
-  📢 社区公告
-</div>
-
-<div class="popup-desc" data-i18n="popupDesc">
-  欢迎来到 ToaY-CloudsMC 社区<br><br>
-  • DC频道已更新如有需要请前往DC<br>
-  • 新增资源导航页面<br>
-  • 请遵守社区规则<br><br>
-  感谢你的支持 ❤️
-</div>
-
-<button class="popup-btn" id="closePopup" data-i18n="popupButton">
-  我知道了
-</button>
-
-  </div></div>
 
   <div class="footer" data-i18n="copyright">
     © 2026 ToaY-CloudsMC Community
@@ -510,6 +513,26 @@ opacity:1;
 </div>
 
 <script src="translations.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 弹窗关闭按钮
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', () => {
+        window.localizationManager && window.localizationManager.closeAnnouncement();
+      });
+    }
+    // 点击遮罩背景关闭
+    const modal = document.getElementById('announcementModal');
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          window.localizationManager && window.localizationManager.closeAnnouncement();
+        }
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
