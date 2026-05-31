@@ -4,7 +4,7 @@ const translations = {
     title: "ToaY-CloudsMC 社区",
     subtitle: "KOOK、QQ 中转站<br>欢迎加入我们的 Discord 社区",
     welcome: "欢迎来到社区",
-    desc1: "公告:<br>Punch感谢这位朋友<br>感谢你的支持 ❤️",
+    desc1: "公告:<br>有贵人捐赠<br>感谢你的支持 ❤️",
     joinDiscord: "加入我们的 Discord",
     joinQQ: "加入 QQ 群聊",
     resourceNav: "📦 资源导航",
