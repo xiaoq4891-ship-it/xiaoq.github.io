@@ -4,8 +4,7 @@ const translations = {
     title: "ToaY-CloudsMC 社区",
     subtitle: "KOOK、QQ 中转站<br>欢迎加入我们的 Discord 社区",
     welcome: "欢迎来到社区",
-    desc1: "公告:<br>Punch感谢这位朋友对我们的支持与信任虽然只是简单的一份心意但对我们来说意义很大
-我们会继续维护和更新感谢大家一直以来的陪伴与支持 ❤️-初星绘梦工作室<br>感谢你的支持 ❤️",
+    desc1: "公告:<br>Punch感谢这位朋友对我们捐赠<br>感谢你的支持 ❤️",
     joinDiscord: "加入我们的 Discord",
     joinQQ: "加入 QQ 群聊",
     resourceNav: "📦 资源导航",
@@ -30,8 +29,7 @@ const translations = {
     title: "ToaY-CloudsMC Community",
     subtitle: "KOOK, QQ Hub<br>Welcome to join our Discord community",
     welcome: "Welcome to the Community",
-    desc1: "Announcement:<br>PunchThank you to this friend for your support and trust.Although it may seem like a small gesture, it means a lot to us.We will continue to maintain and improve our project. Thank you all for your continued companionship and support. ❤️
-— First Star Dream Studio<br>Thank you for your support ❤️",
+    desc1: "Announcement:<br>PunchThank you<br>Thank you for your support ❤️",
     joinDiscord: "Join Our Discord",
     joinQQ: "Join QQ Group",
     resourceNav: "📦 Resources",
